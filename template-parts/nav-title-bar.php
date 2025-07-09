@@ -14,6 +14,6 @@ $breakpoint = "medium"; ?>
 		</ul>
 	</div>
 	<div class="top-bar-right">
-		<?php lacrosse_3d_top_nav(); ?>
+		<?php trailhead_top_nav(); ?>
 	</div>
 </div>

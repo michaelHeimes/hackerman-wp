@@ -2,7 +2,7 @@
 /**
  * The template part for displaying offcanvas content
  *
- * For more info: http://trailhead.com/docs/off-canvas-menu/
+ * For more info: https://jointswp.com/docs/off-canvas-menu/
  */
 ?>
 
@@ -10,7 +10,7 @@
 
 	<div class="inner">
 	
-		<?php lacrosse_3d_off_canvas_nav(); ?>
+		<?php trailhead_off_canvas_nav(); ?>
 				
 	</div>
 

@@ -26,25 +26,28 @@
 
 
 // JS Form Validation
-//@prepros-prepend vendor/foundation/js/plugins/foundation.abide.js
+//@*prepros-prepend vendor/foundation/js/plugins/foundation.abide.js
+
+// Tabs UI
+//@*prepros-prepend vendor/foundation/js/plugins/foundation.tabs.js
 
 // Accordian
-//@prepros-prepend vendor/foundation/js/plugins/foundation.accordion.js
-//@prepros-prepend vendor/foundation/js/plugins/foundation.accordionMenu.js
+//@*prepros-prepend vendor/foundation/js/plugins/foundation.accordion.js
+//@*prepros-prepend vendor/foundation/js/plugins/foundation.accordionMenu.js
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.responsiveAccordionTabs.js
 
 // Menu enhancements
-//@prepros-prepend vendor/foundation/js/plugins/foundation.drilldown.js
-//@prepros-prepend vendor/foundation/js/plugins/foundation.dropdown.js
-//@prepros-prepend vendor/foundation/js/plugins/foundation.dropdownMenu.js
-//@prepros-prepend vendor/foundation/js/plugins/foundation.responsiveMenu.js
+//@*prepros-prepend vendor/foundation/js/plugins/foundation.drilldown.js
+//@*prepros-prepend vendor/foundation/js/plugins/foundation.dropdown.js
+//@*prepros-prepend vendor/foundation/js/plugins/foundation.dropdownMenu.js
+//@*prepros-prepend vendor/foundation/js/plugins/foundation.responsiveMenu.js
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.responsiveToggle.js
 
 // Equalize heights
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.equalizer.js
 
 // Responsive Images
-//@prepros-prepend vendor/foundation/js/plugins/foundation.interchange.js
+//@*prepros-prepend vendor/foundation/js/plugins/foundation.interchange.js
 
 // Navigation Widget
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.magellan.js
@@ -56,7 +59,7 @@
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.orbit.js
 
 // Modals
-//@prepros-prepend vendor/foundation/js/plugins/foundation.reveal.js
+//@*prepros-prepend vendor/foundation/js/plugins/foundation.reveal.js
 
 // Form UI element
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.slider.js
@@ -65,10 +68,7 @@
 //@prepros-prepend vendor/foundation/js/plugins/foundation.smoothScroll.js
 
 // Sticky Elements
-//@prepros-prepend vendor/foundation/js/plugins/foundation.sticky.js
-
-// Tabs UI
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.tabs.js
+//@*prepros-prepend vendor/foundation/js/plugins/foundation.sticky.js
 
 // On/Off UI Switching
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.toggler.js

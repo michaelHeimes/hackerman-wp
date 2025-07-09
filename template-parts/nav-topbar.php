@@ -2,7 +2,7 @@
 /**
  * The off-canvas menu uses the Off-Canvas Component
  *
- * For more info: http://trailhead.com/docs/responsive-navigation/
+ * For more info: https://jointswp.com/docs/responsive-navigation/
  */
 ?>
 
@@ -13,6 +13,6 @@
 		</ul>
 	</div>
 	<div class="top-bar-right">
-		<?php lacrosse_3d_top_nav(); ?>
+		<?php trailhead_top_nav(); ?>
 	</div>
 </div>

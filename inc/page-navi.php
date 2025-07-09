@@ -1,5 +1,5 @@
 <?php // Borrowed with love from FoundationPress
-	function lacrosse_3d_page_navi() {
+	function trailhead_page_navi() {
 		global $wp_query;
 		$big = 999999999; // This needs to be an unlikely integer
 		// For more options and info view the docs for paginate_links()

@@ -2,7 +2,7 @@
 /**
  * The off-canvas menu uses the Off-Canvas Component
  *
- * For more info: http://trailhead.com/docs/off-canvas-menu/
+ * For more info: https://jointswp.com/docs/off-canvas-menu/
  */
 ?>
 
@@ -23,10 +23,10 @@
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 					<?php
 				endif;
-				$lacrosse_3d_description = get_bloginfo( 'description', 'display' );
-				if ( $lacrosse_3d_description || is_customize_preview() ) :
+				$trailhead_description = get_bloginfo( 'description', 'display' );
+				if ( $trailhead_description || is_customize_preview() ) :
 					?>
-					<p class="site-description"><?php echo $lacrosse_3d_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+					<p class="site-description"><?php echo $trailhead_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 		
@@ -44,7 +44,7 @@
 		<div class="top-bar-right show-for-tablet">
 			<div class="grid-x align-right">
 				<div class="cell shrink">
-					<?php lacrosse_3d_region_nav(); ?>	
+					<?php trailhead_top_nav();?>
 				</div>
 			</div>
 		</div>

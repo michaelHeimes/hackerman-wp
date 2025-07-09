@@ -2,7 +2,7 @@
 /**
  * The off-canvas menu uses the Off-Canvas Component
  *
- * For more info: http://trailhead.com/docs/off-canvas-menu/
+ * For more info: https://jointswp.com/docs/off-canvas-menu/
  */
 ?>
 

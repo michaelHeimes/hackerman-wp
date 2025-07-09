@@ -2,7 +2,7 @@
 /**
  * The template part for displaying a grid of posts
  *
- * For more info: http://trailhead.com/docs/grid-archive/
+ * For more info: https://jointswp.com/docs/grid-archive/
  */
 
 // Adjust the amount of rows in the grid

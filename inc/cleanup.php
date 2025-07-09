@@ -1,29 +1,29 @@
 <?php
 
 // Fire all our initial functions at the start
-add_action('after_setup_theme','lacrosse_3d_start', 16);
+add_action('after_setup_theme','trailhead_start', 16);
 
-function lacrosse_3d_start() {
+function trailhead_start() {
 
     // launching operation cleanup
-    add_action('init', 'lacrosse_3d_head_cleanup');
+    add_action('init', 'trailhead_head_cleanup');
 
     // remove pesky injected css for recent comments widget
-    add_filter( 'wp_head', 'lacrosse_3d_remove_wp_widget_recent_comments_style', 1 );
+    add_filter( 'wp_head', 'trailhead_remove_wp_widget_recent_comments_style', 1 );
 
     // clean up comment styles in the head
-    add_action('wp_head', 'lacrosse_3d_remove_recent_comments_style', 1);
+    add_action('wp_head', 'trailhead_remove_recent_comments_style', 1);
 
     // clean up gallery output in wp
-    add_filter('gallery_style', 'lacrosse_3d_gallery_style');
+    add_filter('gallery_style', 'trailhead_gallery_style');
 
     // cleaning up excerpt
-    add_filter('excerpt_more', 'lacrosse_3d_excerpt_more');
+    add_filter('excerpt_more', 'trailhead_excerpt_more');
 
 } /* end joints start */
 
 //The default wordpress head is a mess. Let's clean it up by removing all the junk we don't need.
-function lacrosse_3d_head_cleanup() {
+function trailhead_head_cleanup() {
 	// Remove category feeds
 	// remove_action( 'wp_head', 'feed_links_extra', 3 );
 	// Remove post and comment feeds
@@ -45,14 +45,14 @@ function lacrosse_3d_head_cleanup() {
 } /* end Joints head cleanup */
 
 // Remove injected CSS for recent comments widget
-function lacrosse_3d_remove_wp_widget_recent_comments_style() {
+function trailhead_remove_wp_widget_recent_comments_style() {
    if ( has_filter('wp_head', 'wp_widget_recent_comments_style') ) {
       remove_filter('wp_head', 'wp_widget_recent_comments_style' );
    }
 }
 
 // Remove injected CSS from recent comments widget
-function lacrosse_3d_remove_recent_comments_style() {
+function trailhead_remove_recent_comments_style() {
   global $wp_widget_factory;
   if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
     remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
@@ -60,12 +60,12 @@ function lacrosse_3d_remove_recent_comments_style() {
 }
 
 // Remove injected CSS from gallery
-function lacrosse_3d_gallery_style($css) {
+function trailhead_gallery_style($css) {
   return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
 }
 
 // This removes the annoying […] to a Read More link
-function lacrosse_3d_excerpt_more($more) {
+function trailhead_excerpt_more($more) {
 	global $post;
 	// edit here if you like
 return '<a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Read', 'trailhead') . get_the_title($post->ID).'">'. __('... Read more &raquo;', 'trailhead') .'</a>';
@@ -83,7 +83,7 @@ function remove_sticky_class($classes) {
 add_filter('post_class','remove_sticky_class');
 
 //This is a modified the_author_posts_link() which just returns the link. This is necessary to allow usage of the usual l10n process with printf()
-function lacrosse_3d_get_the_author_posts_link() {
+function trailhead_get_the_author_posts_link() {
 	global $authordata;
 	if ( !is_object( $authordata ) )
 		return false;
@@ -95,3 +95,6 @@ function lacrosse_3d_get_the_author_posts_link() {
 	);
 	return $link;
 }
+
+// Disable Image Scaling
+add_filter( 'big_image_size_threshold', '__return_false' );

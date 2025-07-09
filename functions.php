@@ -1,6 +1,6 @@
 <?php
 /**
- * 3D Lacrosse functions and definitions
+ * Trailhead functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -19,11 +19,11 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function lacrosse_3d_setup() {
+function trailhead_setup() {
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on 3D Lacrosse, use a find and replace
+		* If you're building a theme based on Trailhead, use a find and replace
 		* to change 'trailhead' to the name of your theme in all the template files.
 		*/
 	load_theme_textdomain( 'trailhead', get_template_directory() . '/languages' );
@@ -77,7 +77,7 @@ function lacrosse_3d_setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'lacrosse_3d_custom_background_args',
+			'trailhead_custom_background_args',
 			array(
 				'default-color' => 'ffffff',
 				'default-image' => '',
@@ -104,7 +104,7 @@ function lacrosse_3d_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'lacrosse_3d_setup' );
+add_action( 'after_setup_theme', 'trailhead_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -113,17 +113,17 @@ add_action( 'after_setup_theme', 'lacrosse_3d_setup' );
  *
  * @global int $content_width
  */
-function lacrosse_3d_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'lacrosse_3d_content_width', 640 );
+function trailhead_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'trailhead_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'lacrosse_3d_content_width', 0 );
+add_action( 'after_setup_theme', 'trailhead_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function lacrosse_3d_widgets_init() {
+function trailhead_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'trailhead' ),
@@ -147,13 +147,13 @@ function lacrosse_3d_widgets_init() {
 	));
 	
 }
-add_action( 'widgets_init', 'lacrosse_3d_widgets_init' );
+add_action( 'widgets_init', 'trailhead_widgets_init' );
 
 
 /**
  * Enqueue scripts and styles.
  */
-function lacrosse_3d_scripts() {
+function trailhead_scripts() {
 	wp_enqueue_style( 'trailhead-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'trailhead-style', 'rtl', 'replace' );
 	
@@ -167,7 +167,31 @@ function lacrosse_3d_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'lacrosse_3d_scripts' );
+add_action( 'wp_enqueue_scripts', 'trailhead_scripts' );
+
+
+/**
+ * Enqueue Google Fonts.
+ */
+wp_enqueue_style(
+	 'pmi-google-fonts',
+	 'https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Roboto:ital@0;1&display=swap',
+	 array(),
+	 null
+ );
+ 
+ function google_font_loader_tag_filter( $html, $handle ) {
+	 if ( $handle === 'pmi-google-fonts' ) {
+		 $rel_preconnect = "rel='stylesheet preconnect'";
+		 return str_replace(
+			 "rel='stylesheet'",
+			 $rel_preconnect,
+			 $html
+		 );
+	 }
+	 return $html;
+ }
+ add_filter( 'style_loader_tag', 'google_font_loader_tag_filter', 10, 2 );
 
 
 // Disable Tabelpress Stylesheet
@@ -248,13 +272,13 @@ require_once(get_template_directory().'/inc/disable-gutenberg.php');
 // require_once(get_template_directory().'/inc/login.php'); 
 
 // Customize the WordPress admin
-require_once(get_template_directory().'/inc/admin.php'); 
+// require_once(get_template_directory().'/inc/admin.php'); 
 
 // Sitemap Removal
-require_once(get_template_directory().'/inc/sitemap-removal.php');
+// require_once(get_template_directory().'/inc/sitemap-removal.php');
 
 // Slugify
-require_once(get_template_directory().'/inc/slugify.php');
+// require_once(get_template_directory().'/inc/slugify.php');
 
 // Image Sizes
 require_once(get_template_directory().'/inc/image-sizes.php');

@@ -1,6 +1,6 @@
 <?php
-// Related Posts Function, matches posts by tags - call using lacrosse_3d_related_posts(); )
-function lacrosse_3d_related_posts() {
+// Related Posts Function, matches posts by tags - call using trailhead_related_posts(); )
+function trailhead_related_posts() {
 	global $post;
 	$tag_arr = '';
 	$tags = wp_get_post_tags( $post->ID );
