@@ -3,29 +3,35 @@
     margin-top: -700px;
     padding-top: 700px;
     border-bottom-right-radius: 60px;
+    
+    @media only screen and (max-width: 1066px) {
+        margin-top: -700px;
+        padding-top: 800px;
+    }
 
     @media only screen and (max-width: 900px) {
         margin-top: -600px;
-        padding-top: 600px;
+        padding-top: 800px;
     }
 
     @media only screen and (max-width: 600px) {
         margin-top: -500px;
-        padding-top: 500px;
+        padding-top: 800px;
     }
 
     @media only screen and (max-width: 550px) {
         margin-top: -500px;
-        padding-top: 400px;
+        padding-top: 650px;
     }
 
     @media only screen and (max-width: 350px) {
         margin-top: -500px;
-        padding-top: 500px;
+        padding-top: 700px;
     }
 
     .container {
-        padding: 60px 0 180px 0;
+        padding-top: 60px;
+        padding-bottom: 180px;
 
         .row {
             @media only screen and (max-width: 850px) {
@@ -45,7 +51,7 @@
 
                     .controls {
                         position: absolute;
-                        bottom: -30px;
+                        bottom: -70px;
                         left: 0;
 
                         @media only screen and (max-width: 850px) {

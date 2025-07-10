@@ -27,7 +27,7 @@
         @media only screen and (max-width: 1000px) {
             width: 59px;
             height: 564px;
-            opacity: .5;
+            opacity: 0.5;
         }
     }
 
@@ -46,19 +46,35 @@
             ul {
                 display: flex;
                 justify-content: space-between;
+                flex-wrap: wrap;
                 margin: 0;
                 padding: 0;
                 list-style: none;
 
                 li {
                     position: relative;
+                    overflow: hidden;
                     width: 23%;
                     height: 338px;
                     border-top-right-radius: 60px;
-                    overflow: hidden;
                     padding: 0;
                     margin: 0;
                     list-style: none;
+
+                    @media only screen and (max-width: 1110px) {
+                        height: 318px;
+                    }
+                    @media only screen and (max-width: 1070px) {
+                        height: 308px;
+                    }
+                    @media only screen and (max-width: 900px) {
+                        width: calc(50% - 20px);
+                        height: 47vw;
+                        margin-right: 10px;
+                        margin-left: 10px;
+                        margin-bottom: 20px;
+                    }
+                    
                     > img {
                         position: absolute;
                         top: 0;
@@ -68,24 +84,18 @@
                         object-fit: cover;
                     }
 
-                    @media only screen and (max-width: 1110px) {
-                        height: 318px;
-                    }
-                    @media only screen and (max-width: 1070px) {
-                        height: 308px;
-                    }
-
                     h2 {
                         font-family: adelle-sans, sans-serif;
                         font-weight: 800;
                         font-size: 20px;
-                        color: $white;
+                        color: #fff;
                         text-align: center;
                         position: absolute;
                         z-index: 1;
                         bottom: 39px;
                         width: 100%;
                     }
+                    
                     &:before {
                         content: '';
                         display: block;
@@ -103,7 +113,7 @@
                         height: 29px;
                         background-color: $light-gray;
                         position: absolute;
-                        z-index: 1;
+                        z-index: 2;
                         left: 50%;
                         bottom: 0;
                         transform: translateX(-50%);

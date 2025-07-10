@@ -16,7 +16,7 @@ function trailhead_top_nav_left() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
 		'menu_id'			=> 'main-nav-left',					// Adding custom nav id
-		'menu_class'		=> 'medium-horizontal menu cell auto align-right',	// Adding custom nav class
+		'menu_class'		=> 'medium-horizontal menu cell shrink tablet-auto align-right',	// Adding custom nav class
 		'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
 		'theme_location'	=> 'main-nav-left',					// Where it's located in the theme
 		'depth'				=> 5,							// Limit the depth of the nav
@@ -25,12 +25,12 @@ function trailhead_top_nav_left() {
 	));
 }
 
-// The Top Menu: Left
+// The Top Menu: Right
 function trailhead_top_nav_right() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
 		'menu_id'			=> 'main-nav-right',					// Adding custom nav id
-		'menu_class'		=> 'medium-horizontal menu cell auto',	// Adding custom nav class
+		'menu_class'		=> 'medium-horizontal menu cell shrink tablet-auto',	// Adding custom nav class
 		'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
 		'theme_location'	=> 'main-nav-right',					// Where it's located in the theme
 		'depth'				=> 5,							// Limit the depth of the nav

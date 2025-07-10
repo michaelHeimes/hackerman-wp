@@ -1,82 +1,104 @@
 html,
 body {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-    padding:0;
-    margin:0;
-    min-height: 100vh;
-
-    font-family: adelle-sans, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-    letter-spacing: 1px;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  font-family: adelle-sans, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 .h1-like,
 h1 {
-    font-family: capitolium-2, serif;
-    font-weight: 700;
-    font-size: 50px;
+  font-family: capitolium-2, serif;
+  font-weight: 700;
+  font-size: 50px;
 }
 
 .h2-like,
 h2 {
-    font-family: capitolium-2, serif;
-    font-weight: 700;
-    font-size: 40px;
+  font-family: capitolium-2, serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2em;
 }
 
 .h3-like,
 h3 {
-    font-family: adelle-sans, sans-serif;
-    font-weight: 800;
-    font-size: 20px;
+  font-family: adelle-sans, sans-serif;
+  font-weight: 800;
+  font-size: 20px;
 }
 
 a {
-    color: $gold;
-    text-decoration: underline;
-    transition: 0.3s all ease;
-
-    &:hover {
-        text-decoration: none;
-    }
+  color: #FFE47A;
+  text-decoration: underline;
+  transition: 0.3s all ease;
+}
+a:hover {
+  text-decoration: none;
 }
 
 p {
-    line-height: 1.8em;
+  line-height: 1.8em;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .container {
-    max-width: 1094px;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-
-    @media only screen and (max-width: 1066px) {
-        max-width: 90%;
-    }
+  max-width: 1066px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+@media only screen and (max-width: 1066px) {
+  .container {
+    max-width: 90%;
+  }
 }
 
 .row {
-    display: flex;
+  display: flex;
+}
+.row.reverse {
+  flex-direction: row-reverse;
+}
+.screen_reader_only {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
 
-    &.reverse {
-        flex-direction: row-reverse;
-    }
-
-    .col {
-
-    }
+#sticky {
+  display: block;
+  width: 55px;
+  height: 61px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+#sticky img {
+  width: 100%;
 }

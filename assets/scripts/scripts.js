@@ -84,7 +84,6 @@ ready(function () {
 
 	// News Slider
 	var news_slides = document.querySelectorAll('.news .news-holder .news-article');
-	
 	if( news_slides.length > 0 ) {
 		var control_container = document.querySelector('.news .controls');
 		var news_conatainer = document.querySelector('.news .news-holder');
