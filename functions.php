@@ -159,6 +159,8 @@ function trailhead_scripts() {
 	
 	wp_enqueue_style( 'trailhead-style-min', get_template_directory_uri() . '/assets/styles/style.min.css', array(), _S_VERSION );
 	
+	wp_enqueue_script( 'scripts-js', get_template_directory_uri() . '/assets/scripts/scripts.js', array('jquery'), _S_VERSION, true );
+	
 	wp_enqueue_script( 'app-js', get_template_directory_uri() . '/assets/scripts/app.min.js', array('jquery'), _S_VERSION, true );
 	
 	//wp_enqueue_script( 'trailhead-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );

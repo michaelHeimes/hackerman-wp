@@ -24,11 +24,22 @@
 	<?php wp_body_open(); ?>
 			<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'trailhead' ); ?></a>
 		
-			<div class="sticky-container">
-				<header class="site-header" role="banner" data-sticky data-margin-top="0" data-sticky-on="small">
-					<?php get_template_part( 'template-parts/nav', 'offcanvas-topbar' ); ?>
+				<header class="site-header" role="banner">
+					<?php //get_template_part( 'template-parts/nav', 'offcanvas-topbar' ); ?>
+					<div class="grid-x grid-padding-x">
+						<?php trailhead_top_nav_left();?>
+						<ul class="menu logo-menu cell shrink">
+							<li class="logo"><a href="<?php echo home_url(); ?>">
+								<?php 
+								$header_logo = get_field('header_logo', 'option');
+								if( !empty( $header_logo ) ){
+									echo wp_get_attachment_image( $header_logo['id'], 'full' );
+								};?>
+							</a></li>
+						</ul>
+						<?php trailhead_top_nav_right();?>
+					</div>
 				</header><!-- #masthead -->
-			</div>
 				
 				<div class="off-canvas-wrapper">
 				

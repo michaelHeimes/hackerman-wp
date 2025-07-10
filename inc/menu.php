@@ -2,7 +2,8 @@
 // Register menus
 register_nav_menus(
 	array(
-		'main-nav'		=> __( 'The Main Menu', 'trailhead' ),		// Main nav in header
+		'main-nav-left'		=> __( 'The Main Menu: Left', 'trailhead' ),		// Main nav in header
+		'main-nav-right'		=> __( 'The Main Menu: Right', 'trailhead' ),		// Main nav in header
 		'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'trailhead' ),	// Off-Canvas nav
 		'footer-links'	=> __( 'Footer Links', 'trailhead' ),		// Secondary nav in footer
 		'social-links'	=> __( 'Social Links', 'trailhead' ),		// Social Nav
@@ -10,19 +11,31 @@ register_nav_menus(
 );
 
 
-// The Top Menu
-function trailhead_top_nav() {
+// The Top Menu: Left
+function trailhead_top_nav_left() {
 	wp_nav_menu(array(
 		'container'			=> false,						// Remove nav container
-		'menu_id'			=> 'main-nav',					// Adding custom nav id
-		'menu_class'		=> 'medium-horizontal menu',	// Adding custom nav class
-		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion tablet-dropdown" data-submenu-toggle="true" data-hover-delay="200" data-closing-time="200">%3$s</ul>',
-		'theme_location'	=> 'main-nav',					// Where it's located in the theme
+		'menu_id'			=> 'main-nav-left',					// Adding custom nav id
+		'menu_class'		=> 'medium-horizontal menu cell auto align-right',	// Adding custom nav class
+		'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
+		'theme_location'	=> 'main-nav-left',					// Where it's located in the theme
 		'depth'				=> 5,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
 		'walker'			=> new Topbar_Menu_Walker(),
-		'link_before'    => '<span>',
-		'link_after'     => '</span>'	
+	));
+}
+
+// The Top Menu: Left
+function trailhead_top_nav_right() {
+	wp_nav_menu(array(
+		'container'			=> false,						// Remove nav container
+		'menu_id'			=> 'main-nav-right',					// Adding custom nav id
+		'menu_class'		=> 'medium-horizontal menu cell auto',	// Adding custom nav class
+		'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
+		'theme_location'	=> 'main-nav-right',					// Where it's located in the theme
+		'depth'				=> 5,							// Limit the depth of the nav
+		'fallback_cb'		=> false,						// Fallback function (see below)
+		'walker'			=> new Topbar_Menu_Walker(),
 	));
 }
 

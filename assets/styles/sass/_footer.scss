@@ -1,41 +1,149 @@
-footer#colophon {
+footer {
+    background-color: #638CB4;
+    background-image: url(../image/footer-bg.png);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding-top: 180px;
+    padding-bottom: 80px;
+    margin-top: -80px;
+    position: relative;
+    z-index: 0;
 
-	.site-info {
+    @media only screen and (max-width: 850px) {
+        padding-top: 160px;
+    }
 
-	}
-	
-	.left {
-		.bottom {
-			@include breakpoint(medium down) {
-				padding-bottom: 4.1rem;
-			}
-		}
-	}
-		
-	ul#footer-links {
-		@include breakpoint(medium down) {
-			padding-bottom: 4.08rem;
-		}
-		li {
-			a {
-				font-size: rem-calc(14);
-				line-height: rem-calc(19);
-				font-weight: bold;
-				text-transform: uppercase;
-			}
-		}
-	}
-	
-	.copyright {
-		margin-bottom: 0;
-		@include breakpoint(medium down) {
-			text-align: center;
-		}
-		@include breakpoint(tablet) {
-			br {
-				display: none;
-			}
-		}
-	}
-	
+    .container {
+        .row {
+            @media only screen and (max-width: 850px) {
+                flex-direction: column;
+            }
+
+            .col {
+                &#news {
+                    width: 66%;
+                    padding-right: 60px;
+                    border-right: 1px solid #9AA9C1;
+                    
+                    @media only screen and (max-width: 1000px) {
+                        padding-right: 30px;
+                    }
+
+                    @media only screen and (max-width: 850px) {
+                        padding-right: 0;
+                        width: 90%;
+                        margin: 0 auto;
+                        border-right: none;
+                        padding-bottom: 60px;
+                        border-bottom: 1px solid #9AA9C1;
+                    }
+
+                    h2 {
+                        color: $white;
+                        font-size: 20px;
+                        font-family: adelle-sans, sans-serif;
+                        font-weight: 800;
+                    }
+
+                    a  {
+                        font-family: capitolium-2, serif;
+                        color: $white;
+                        font-size: 28px;
+                        font-weight: 400;
+                        text-decoration-color: $gold;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+
+                        @media only screen and (max-width: 1000px) {
+                            font-size: 24px;
+                        }
+                    }
+
+                    p.source {
+                        font-family: adelle-sans, sans-serif;
+                        font-size: 16px;
+                        font-weight: 400;
+                        text-decoration: none;
+                        color: $white;
+                    }
+
+                    .news-holder {
+                        .news-article {
+                            display: none;
+
+                            &:first-child {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                &#footer {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: right;
+                    text-align: right;
+
+                    width: 34%;
+                    padding-left: 60px;
+
+                    @media only screen and (max-width: 1000px) {
+                        padding-left: 30px;
+                    }
+
+                    @media only screen and (max-width: 850px) {
+                        padding-left: 0;
+                        width: 90%;
+                        margin: 0 auto;
+                        padding-top: 60px;
+                        align-items: center;
+                        text-align: center;
+                    }
+
+                    color: $white;
+
+                    a  {
+                        color: $white;
+                        font-size: 14px;
+                        font-weight: 700;
+                        font-family: adelle-sans, sans-serif;
+                        margin-bottom: 40px;
+
+                        img {
+                            display: inline-block;
+                        }
+                    }
+
+                    ul {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        justify-content: flex-end;
+
+                        @media only screen and (max-width: 850px) {
+                            justify-content: center;
+                        }
+
+                        li {
+                            margin-left: 15px;
+                            padding: 0;
+
+                            a {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                    p.copyright {
+                        color: #9AA9C1;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
 }
